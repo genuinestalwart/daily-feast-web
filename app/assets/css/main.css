@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme {
+	--font-sans: 'Glory', sans-serif;
+	--color-accent: #562f00;
+	--color-neutral: #fffdf1;
+	--color-primary: #ff9644;
+	--color-secondary: #ffce99;
+}
