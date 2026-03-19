@@ -6,11 +6,13 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image', '@auth0/auth0-nuxt'],
 	runtimeConfig: {
 		auth0: {
-			domain: '',
+			appBaseUrl: '',
+			audience: '',
 			clientId: '',
 			clientSecret: '',
+			domain: '',
 			sessionSecret: '',
-			appBaseUrl: '',
 		},
+		public: { apiBaseUrl: '' },
 	},
 })
