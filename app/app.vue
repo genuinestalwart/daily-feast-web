@@ -4,6 +4,11 @@
 
 	<UApp>
 		<Header />
-		<!-- <NuxtPage /> -->
+
+		<UMain>
+			<NuxtPage />
+		</UMain>
+
+		<Footer />
 	</UApp>
 </template>

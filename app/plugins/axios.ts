@@ -21,7 +21,7 @@ export default defineNuxtPlugin(() => {
 		(response) => response,
 		async (error) => {
 			if (error.response?.status === 401) {
-				navigateTo('/auth/logout')
+				navigateTo('/auth/logout', { external: true })
 			}
 
 			return Promise.reject(error)

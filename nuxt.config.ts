@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
+	components: [{ path: '~/components', pathPrefix: false }],
 	css: ['~/assets/css/main.css'],
 	devtools: { enabled: false },
 	modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image', '@auth0/auth0-nuxt'],
@@ -15,4 +16,5 @@ export default defineNuxtConfig({
 		},
 		public: { apiBaseUrl: '' },
 	},
+	vite: { optimizeDeps: { include: ['axios'] } },
 })
