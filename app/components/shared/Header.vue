@@ -9,9 +9,9 @@
 		mode="drawer"
 		title="Daily Feast"
 		toggle-side="left"
-		:ui="{ center: 'hidden! lg:flex!' }">
+		:ui="{ center: 'hidden lg:flex' }">
 		<template #title>
-			<div class="flex! gap-2 items-center">
+			<div class="flex gap-2 items-center">
 				<img
 					alt="daily feast logo"
 					class="h-12 w-12"
@@ -25,13 +25,13 @@
 		</template>
 
 		<UNavigationMenu
-			class="hidden! lg:flex!"
+			class="hidden lg:flex"
 			:items="navigationItems"
 			v-if="user" />
 
 		<template #right>
-			<div class="flex! items-center">
-				<div class="flex! gap-3 items-center" v-if="user">
+			<div class="flex items-center">
+				<div class="flex gap-3 items-center" v-if="user">
 					<UButton
 						color="neutral"
 						icon="i-material-symbols-shopping-cart"
@@ -51,10 +51,23 @@
 							color="neutral"
 							icon="i-material-symbols-account-circle"
 							variant="ghost" />
+
+						<template #user>
+							<UUser
+								:avatar="{
+									alt: user.name,
+									loading: 'eager',
+									src: user.picture,
+								}"
+								:description="user.email"
+								:name="user.name"
+								to="/profile"
+								:ui="{ description: 'text-left' }" />
+						</template>
 					</UDropdownMenu>
 				</div>
 
-				<div class="flex! gap-3 items-center" v-else>
+				<div class="flex gap-3 items-center" v-else>
 					<UButton
 						class="font-semibold px-4 py-1 text-base"
 						@click="navigateTo('/auth/login', { external: true })"
@@ -90,7 +103,7 @@
 			}"
 			v-model:open="open">
 			<template #body>
-				<div class="flex! justify-center">
+				<div class="flex justify-center">
 					<img
 						alt="confirm logout"
 						class="h-auto w-1/2"
@@ -99,7 +112,7 @@
 			</template>
 
 			<template #footer>
-				<div class="flex! gap-3 justify-end w-full">
+				<div class="flex gap-3 justify-end w-full">
 					<UButton
 						@click="open = false"
 						color="neutral"

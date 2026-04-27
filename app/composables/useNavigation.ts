@@ -12,20 +12,7 @@ export const useNavigation = () => {
 		}
 
 		const dropDownItems: DropdownMenuItem[][] = [
-			[
-				{
-					avatar: {
-						alt: user.value.name,
-						loading: 'eager',
-						size: 'xl',
-						src: user.value.picture,
-					},
-					description: user.value?.email,
-					label: user.value.name,
-					to: '/profile',
-					ui: { item: 'items-center' },
-				},
-			],
+			[{ slot: 'user' as const }],
 			[
 				{
 					color: route.path === '/settings' ? 'primary' : 'neutral',

@@ -75,7 +75,7 @@
 					&copy; {{ new Date().getFullYear() }} Daily Feast
 				</p>
 
-				<div class="flex! justify-center lg:justify-start mt-4">
+				<div class="flex justify-center lg:justify-start mt-4">
 					<UButton
 						aria-label="Instagram"
 						color="neutral"

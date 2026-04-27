@@ -6,7 +6,9 @@
 		<Header />
 
 		<UMain>
-			<NuxtPage />
+			<UContainer>
+				<NuxtPage />
+			</UContainer>
 		</UMain>
 
 		<Footer />
